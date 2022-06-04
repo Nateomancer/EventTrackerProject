@@ -12,12 +12,12 @@ import com.skilldistillery.powerlifting.repositories.TrainingDayLiftRepository;
 public class TrainingDayLiftServiceImpl implements TrainingDayLiftService {
 
 	@Autowired
-	private TrainingDayLiftRepository trainingDayRepo;
+	private TrainingDayLiftRepository trainingDayLiftRepo;
 	
 	@Override
 	public List<TrainingDayLift> index() {
 		
-		return trainingDayRepo.findAll();
+		return trainingDayLiftRepo.findAll();
 	}
 
 }

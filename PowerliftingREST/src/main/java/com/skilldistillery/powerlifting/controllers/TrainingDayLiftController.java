@@ -15,12 +15,12 @@ import com.skilldistillery.powerlifting.services.TrainingDayLiftService;
 public class TrainingDayLiftController {
 
 	@Autowired
-	private TrainingDayLiftService trainingDayServ;
+	private TrainingDayLiftService trainingDayLiftServ;
 	
-	@GetMapping("tranningDay")
+	@GetMapping("traningDayLift")
 	public List<TrainingDayLift> index(){
 		
-		return trainingDayServ.index();
+		return trainingDayLiftServ.index();
 	}
 	
 }
