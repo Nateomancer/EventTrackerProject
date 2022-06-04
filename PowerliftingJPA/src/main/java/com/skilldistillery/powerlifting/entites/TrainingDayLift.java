@@ -87,11 +87,21 @@ public class TrainingDayLift {
 		this.amrapWeight = amrapWeight;
 	}
 
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	
+
 	@Override
 	public String toString() {
-		return "TrainingDay [id=" + id + ", trainingLift=" + trainingLift + ", firstSetWeight=" + firstSetWeight
+		return "TrainingDayLift [id=" + id + ", trainingLift=" + trainingLift + ", firstSetWeight=" + firstSetWeight
 				+ ", secondSetWeight=" + secondSetWeight + ", thirdSetWeight=" + thirdSetWeight + ", amrapWeight="
-				+ amrapWeight + ", userId=" + userId + "]";
+				+ amrapWeight + "]";
 	}
 
 	@Override
