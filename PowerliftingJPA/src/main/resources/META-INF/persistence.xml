@@ -8,10 +8,9 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<!-- begin entites -->
-
-		<class>com.skilldistillery.powerlifting.entites.TrainingDay</class>
 		<class>com.skilldistillery.powerlifting.entites.User</class>
-		<class>com.skilldistillery.powerlifting.entites.TrainingLog</class>
+		<class>com.skilldistillery.powerlifting.entites.TrainingDayLift</class>
+		<class>com.skilldistillery.powerlifting.entites.TrainingLiftLog</class>
 		<!-- end entites -->
 
 		<properties>

@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.skilldistillery.powerlifting.entites.TrainingDay;
-import com.skilldistillery.powerlifting.services.TrainingDayService;
+import com.skilldistillery.powerlifting.entites.TrainingDayLift;
+import com.skilldistillery.powerlifting.services.TrainingDayLiftService;
 
 @RequestMapping("api")
 @RestController
-public class TrainingDayController {
+public class TrainingDayLiftController {
 
 	@Autowired
-	private TrainingDayService trainingDayServ;
+	private TrainingDayLiftService trainingDayServ;
 	
 	@GetMapping("tranningDay")
-	public List<TrainingDay> index(){
+	public List<TrainingDayLift> index(){
 		
 		return trainingDayServ.index();
 	}

@@ -14,7 +14,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "training_day_log")
-public class TrainingLog {
+public class TrainingLiftLog {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,7 +47,7 @@ public class TrainingLog {
 	@Column(name = "user_id")
 	private Integer userId;
 
-	public TrainingLog() {
+	public TrainingLiftLog() {
 		super();
 	}
 
@@ -152,7 +152,7 @@ public class TrainingLog {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TrainingLog other = (TrainingLog) obj;
+		TrainingLiftLog other = (TrainingLiftLog) obj;
 		return id == other.id;
 	}
 

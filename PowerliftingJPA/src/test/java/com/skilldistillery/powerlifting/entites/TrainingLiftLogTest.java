@@ -12,11 +12,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class TrainingLogTest {
+class TrainingLiftLogTest {
 
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private TrainingLog trainingLog;
+	private TrainingLiftLog trainingLog;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -35,7 +35,7 @@ class TrainingLogTest {
 	void setUp() throws Exception {
 
 		em = emf.createEntityManager();
-		trainingLog = em.find(TrainingLog.class, 1);
+		trainingLog = em.find(TrainingLiftLog.class, 1);
 
 	}
 

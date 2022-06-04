@@ -14,11 +14,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class TrainingDayTest {
+class TrainingDayLiftTest {
 
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private TrainingDay trainingDay;
+	private TrainingDayLift trainingDayLift;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -37,7 +37,7 @@ class TrainingDayTest {
 	void setUp() throws Exception {
 		
 		em=emf.createEntityManager();
-		trainingDay=em.find(TrainingDay.class, 1);
+		trainingDayLift=em.find(TrainingDayLift.class, 1);
 		
 	}
 
@@ -45,7 +45,7 @@ class TrainingDayTest {
 	void tearDown() throws Exception {
 		
 		em.close();
-		trainingDay=null;
+		trainingDayLift=null;
 		
 	}
 
@@ -54,13 +54,13 @@ class TrainingDayTest {
 	void test_basic_entity_mapping() {
 		
 		System.err.println("TESTING BASIC TRANING DAY MAPPINGS");
-		System.err.println(trainingDay);
-		assertNotNull(trainingDay);
-		assertEquals("Bench",trainingDay.getTrainingLift());
-		assertEquals(235, trainingDay.getFirstSetWeight());
-		assertEquals(250, trainingDay.getSecondSetWeight());
-		assertEquals(270, trainingDay.getThirdSetWeight());
-		assertEquals(185, trainingDay.getAmrapWeight());
+		System.err.println(trainingDayLift);
+		assertNotNull(trainingDayLift);
+		assertEquals("Bench",trainingDayLift.getTrainingLift());
+		assertEquals(235, trainingDayLift.getFirstSetWeight());
+		assertEquals(250, trainingDayLift.getSecondSetWeight());
+		assertEquals(270, trainingDayLift.getThirdSetWeight());
+		assertEquals(185, trainingDayLift.getAmrapWeight());
 		
 //		assertEquals(250, post.getCreatedAt().getYear());
 //		assertEquals(3, post.getCreatedAt().getMonthValue());

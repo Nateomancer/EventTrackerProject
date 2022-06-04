@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "training_day_lift")
-public class TrainingDay {
+public class TrainingDayLift {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +35,7 @@ public class TrainingDay {
 	@Column(name = "user_id")
 	private Integer userId;
 
-	public TrainingDay() {
+	public TrainingDayLift() {
 		super();
 	}
 
@@ -107,7 +107,7 @@ public class TrainingDay {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TrainingDay other = (TrainingDay) obj;
+		TrainingDayLift other = (TrainingDayLift) obj;
 		return id == other.id;
 	}
 
