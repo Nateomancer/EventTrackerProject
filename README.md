@@ -6,7 +6,7 @@ There are a variety of training methods, but one of the most common is the conju
 
 I created a database which currently has 5 tables, user, training_day_lift, training_day_log, warmup, and accessory_work.  As of now only the training_day_lift is implemented, which is the training day plan for the user.  They will follow the routine listed in the plan, this table shows contains one of the three powerlifting lifts (bench press, squat, and deadlift), and the amount of weight for each set.  The user will then be able to log the lifts in the training day log, were they able to complete the workout, how difficult was it, did the weight feel heavy etc.  They can also log any warmups or accessory work in their respective tables.  The user will frist have to create an account and enter their max bench, squat, and deadlift, which will then be used to calculate each training day.  The percent can very, but its typically 70%-90% for each each, moving up by 5-10% for each set.  If the user was able to complete the 531 workout, the following week will have a slight increase to the weight of each lift, if not the weight will either stay the same, or decrease. After a period of couple weeks a deload week (easy week) will be suggested.
 
-##Technology
+## Technology
 
 Java
 Spring Boot
