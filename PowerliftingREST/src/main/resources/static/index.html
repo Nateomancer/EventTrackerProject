@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<!--HTML HEAD  -->
+<head>
+<meta charset="UTF-8">
+<title>Training Day Plan</title>
+<!-- CSS only -->
+<!--BOOTSTRAP -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+	crossorigin="anonymous">
+<link rel="stylesheet" href=css/powerlifting.css type="text/css">
+<!-- JAVASCRIPT TAG-->
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<!-- HTML BODY -->
+<body>
+
+	<!--MAIN CLASS-->
+	<main class="container-fluid">
+
+		<h1>Power-lifting Training Plan Log</h1>
+		<div id="trainingDayList">
+
+			<!-- TABLE DISPLAYS SERIES -->
+			<table class="table table-striped table-hover">
+				<thead class="table-dark">
+					<tr>
+						<th>ID</th>
+						<th>Training Day</th>
+						<th>First Set</th>
+						<th>Second Set</th>
+						<th>Third Set</th>
+						<th>AMRAP</th>
+						<th>Total Weight Lifted</th>
+						
+					</tr>
+				</thead>
+				<tbody id="trainingDayRows">
+				</tbody>
+			</table>
+		</div>
+		<br>
+		<hr>
+	</main>
+	<br>
+	
+	
+	<!-- DATA AGGREGATION -->
+	<div class=dataAggregation id="countLifts">
+	<p>	
+	<strong>Total Bench Workouts Completed: </strong><span name="benchWorkouts" id="benchWorkouts"></span>
+	<br>
+	
+	<strong>Total Squat Workouts Completed: </strong><span name="squatWorkouts" id="squatWorkouts"></span>
+	<br>
+	
+	<strong>Total Deadlift Workouts Completed: </strong><span name="deadliftWorkouts" id="deadliftWorkouts"></span>
+	</p>
+	<br>
+	</div>
+
+
+
+	<!--ADD NEW TRAINING DAY FORM-->
+	<div class="trainingDay">
+
+
+		<h1>Enter A New Training Plan</h1>
+
+		<p>Use the form below to manually create your own 531 training
+			plan.</p>
+		<p>Primary Training Lifts: Bench Press, Squat, Dead Lift</p>
+
+		<form name="newTrainingDayForm">
+
+			<label for="trainingLift">Training Lift</label> 
+			<input type="text" name="trainingLift"placeholder="Enter Primary Lift">
+
+			<datalist id="trainingLift">
+				<option value="Bench Press">Bench Press</option>
+				<option value="Squat">Squat</option>
+				<option value="Dead Lift">Dead-Lift</option>
+			</datalist>
+			
+			<br>
+
+			<h6>Training Sets consist of 5 sets of 5-8 reps each</h6>
+			<h6>Use 60% of your One Rep Max for these Set</h6>
+			<label for="trainingSetWeight"> Enter Weight lb</label> <input
+				type="number" name="trainingSetWeight" id="firstSetWeightCreateId"
+				placeholder=185><br>
+
+			<h6>531 SETS 1 set 5 reps Use 70% of your One Rep Max for this
+				Set</h6>
+			<label for="firstSetWeight"> Enter Weight lb</label> <input
+				type="number" name="firstSetWeight" id="firstSetWeightCreateId"
+				placeholder=235><br>
+
+			<h6>1 set 3 reps Use 80% of your One Rep Max for this Set</h6>
+
+			<label for="secondSetWeight"> Enter Weight lb</label> <input
+				type="number" name="secondSetWeight" id="secondSetWeightCreateId"
+				placeholder=270><br>
+
+			<h6>1 set 1 rep minimum, 3 reps max. Use 90% of your one rep max
+				for this set</h6>
+
+			<label for="thirdSetWeight"> Enter Weight lb</label> <input
+				type="number" name="thirdSetWeight" id="thirdSetWeightCreateId"
+				placeholder=280><br>
+
+			<h6>As many reps as possible (AMRAP)</h6>
+			<h6>Use 60% of your 1 rep max for as many reps as you can pump
+				out</h6>
+			<label for="amrapWeight">Enter Weight lb</label> <input type="number"
+				name="amrapWeight" id="thirdSetWeightId" placeholder=135><br>
+			<br>
+
+			<button name="addTrainingDayButton">Add Training Plan</button>
+		</form>
+	</div>
+
+	<br>
+	<hr>
+	<br>
+	
+<!--UPDATE TRAINING DAY PLAN -->
+	<div class="trainingDay" id="updateTrainingDay">
+		<h3>Update A Training Day Plan</h3>
+		<p>Enter the ID of the training day you wish to update.</p>
+		<form name="updateTrainingDayForm">
+
+			<label for="id">Training Day ID</label>
+			<input type="number" name="id" id="id" placeholder="Enter Id"><br>
+			<br> 
+				
+			<label for="trainingLift">Enter Primary Training Lift</label> 
+			<input type="text" name="trainingLift" id="trainingLift"
+			placeholder="Training Lift"><br> 
+			<br>
+				
+			<label for="firstSetWeight">Enter weight for first set</label> 
+			<input type="number" name="firstSetWeight" id="firstSetWeight" 
+			placeholder="Frist Set lb"><br> 
+			<br>
+			
+			<label for="secondSetWeight">Enter weight for second set</label> 
+			<input type="number" name="secondSetWeight" id="secondSetWeight"
+			placeholder="Second Set lb"><br> 
+			<br>
+				
+			<label for="thirdSetWeight">Enter weight for third set</label> 
+			<input type="number" name="thirdSetWeight" id="thirdSetWeight"
+			placeholder="Third Set lb"><br>
+			<br> 
+				
+			<label for="amrapWeight">Enter Weight for AMRAP Set</label> 
+			<input type="number" name="amrapWeight" id="amrapWeight" placeholder="AMRAP Set lb"><br>
+			<br>
+			
+			<button name="updateTrainingDayButton">Update Training Day</button>
+			<br>
+		</form>
+	</div>
+
+	<br>
+	<hr>
+	<br>
+	
+	<!--DELETE TRAINING DAY -->
+<!-- 	<div class="trainingDay" id="deleteTrainingDay"> -->
+		<h3>Delete A Training Day Plan</h3>
+		<form name="deleteTrainingDayForm">
+			<p>Select the id of the training day you wish to delete</p>
+			<label for="deleteTrainingDay">Training Day ID</label> 
+			<input type="number"name="deleteTrainingDay" id="deleteTrainingDay" placeholder="Enter Id"><br> 
+			<br>
+			<button name="deleteTrainingDayButton">Delete Training DayPlan</button>
+			<br>
+		</form>
+	<!-- </div> -->
+	<br>
+	<hr>
+	<br>
+
+
+	<!-- JavaScript Bundle with Popper -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+		crossorigin="anonymous"></script>
+
+
+</body>
+</html>

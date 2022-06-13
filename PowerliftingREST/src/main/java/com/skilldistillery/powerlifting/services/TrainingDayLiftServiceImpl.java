@@ -39,47 +39,39 @@ public class TrainingDayLiftServiceImpl implements TrainingDayLiftService {
 	@Override
 	public TrainingDayLift create(TrainingDayLift trainingDayLift) {
 
+		System.out.println(trainingDayLift);
+
 		try {
 
-			if (trainingDayLift.getUserId() != null) {
+			final String DEFAULT_LIFT = "DEFAULT LIFT";
+			final Integer DEFAULT_SET_WEIGHT = 135;
 
-				final String DEFAULT_LIFT = "DEFAULT TITLE";
-				final Integer DEFAULT_SET_WEIGHT = 135;
-
-				if (trainingDayLift.getTrainingLift() == null) {
-					trainingDayLift.setTrainingLift(DEFAULT_LIFT);
-				}
-
-				if (trainingDayLift.getFirstSetWeight() == null) {
-					trainingDayLift.setFirstSetWeight(DEFAULT_SET_WEIGHT);
-				}
-				if (trainingDayLift.getSecondSetWeight() == null) {
-					trainingDayLift.setSecondSetWeight(DEFAULT_SET_WEIGHT);
-				}
-				if (trainingDayLift.getThirdSetWeight() == null) {
-					trainingDayLift.setThirdSetWeight(DEFAULT_SET_WEIGHT);
-				}
-				if (trainingDayLift.getAmrapWeight() == null) {
-					trainingDayLift.setAmrapWeight(DEFAULT_SET_WEIGHT);
-				}
-
-				trainingDayLiftRepo.save(trainingDayLift);
-
+			if (trainingDayLift.getTrainingLift().isEmpty() && trainingDayLift.getTrainingLift() == null) {
+				trainingDayLift.setTrainingLift(DEFAULT_LIFT);
 			}
 
-			else if (trainingDayLift.getUserId() == null) {
-
-				System.err.println("USER ID NULL");
-
-				trainingDayLift = null;
-
+			if (trainingDayLift.getFirstSetWeight() == null) {
+				trainingDayLift.setFirstSetWeight(DEFAULT_SET_WEIGHT);
 			}
-		} catch (Exception e) {
+			if (trainingDayLift.getSecondSetWeight() == null) {
+				trainingDayLift.setSecondSetWeight(DEFAULT_SET_WEIGHT);
+			}
+			if (trainingDayLift.getThirdSetWeight() == null) {
+				trainingDayLift.setThirdSetWeight(DEFAULT_SET_WEIGHT);
+			}
+			if (trainingDayLift.getAmrapWeight() == null) {
+				trainingDayLift.setAmrapWeight(DEFAULT_SET_WEIGHT);
+			}
+
+			trainingDayLiftRepo.save(trainingDayLift);
+
+		}
+
+		catch (Exception e) {
 
 			e.printStackTrace();
 			System.err.println("USER ID NULL");
 
-			
 		}
 
 		return trainingDayLift;
@@ -91,9 +83,15 @@ public class TrainingDayLiftServiceImpl implements TrainingDayLiftService {
 	public TrainingDayLift update(TrainingDayLift trainingDayLift, Integer trainingDayLiftId) {
 
 		TrainingDayLift updater = findById(trainingDayLiftId);
-
+		
+		System.err.println("UPDATING TRAINING DAY LIFT");
+		System.err.println("trainingDayLiftId" + trainingDayLiftId);
+		System.err.println("UPDATING TRAINING DAY LIFT" + trainingDayLift);
+		System.err.println("TRAINING DAY LIFT"+ updater);
+		
+		updater.setTrainingLift(trainingDayLift.getTrainingLift());
 		updater.setFirstSetWeight(trainingDayLift.getFirstSetWeight());
-		updater.setThirdSetWeight(trainingDayLift.getSecondSetWeight());
+		updater.setSecondSetWeight(trainingDayLift.getSecondSetWeight());
 		updater.setThirdSetWeight(trainingDayLift.getSecondSetWeight());
 		updater.setAmrapWeight(trainingDayLift.getAmrapWeight());
 

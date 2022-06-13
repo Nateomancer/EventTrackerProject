@@ -1,0 +1,46 @@
+/* @charset "UTF-8";
+
+.trainingDay {
+	border-color: black;
+	background-color: teal;
+	color: black;
+	padding: 10px; 
+	font-size: 12px;
+	width:  200px;
+	height:  60px;
+
+	
+	border-width: thick;
+	font-size: 20px;
+} */
+
+/* .trainingDay {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	background-color: #666;
+	width: 160px;
+	margin-left: -45px;
+	border-radius: 5px;
+	z-index: 1;
+}
+
+.dropdown-menu a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+
+.dropdown-menu a:hover {
+	background-color: #ddd;
+}
+
+.drop-down:hover #dropdown-menu {
+	display: block;
+} */

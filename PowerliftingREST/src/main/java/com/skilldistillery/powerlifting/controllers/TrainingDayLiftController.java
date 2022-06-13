@@ -84,8 +84,8 @@ public class TrainingDayLiftController {
 	}
 
 	@PatchMapping(path = "trainingDayLifts/{id}")
-	public TrainingDayLift updateTrainingDayLift(@PathVariable Integer id,
-			@RequestBody TrainingDayLift trainingDayLift, HttpServletRequest req, HttpServletResponse res) {
+	public TrainingDayLift updateTrainingDayLift(@PathVariable Integer id, @RequestBody TrainingDayLift trainingDayLift,
+			HttpServletRequest req, HttpServletResponse res) {
 
 		try {
 
@@ -105,12 +105,11 @@ public class TrainingDayLiftController {
 		return trainingDayLift;
 	}
 
-	@DeleteMapping(path = "trainingDayLifts/{id}")
-	public void deleteTrainingDayLift(@PathVariable Integer id, HttpServletRequest req,
-			HttpServletResponse res) {
-		
-		Boolean deleted=trainingDayLiftServ.delete(id);
-		
+	@DeleteMapping(path = "trainingDayLifts/delete/{id}")
+	public void deleteTrainingDayLift(@PathVariable Integer id, HttpServletResponse res) {
+
+		Boolean deleted = trainingDayLiftServ.delete(id);
+
 		try {
 			if (deleted) {
 				res.setStatus(204);
